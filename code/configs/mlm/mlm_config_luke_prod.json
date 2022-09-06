@@ -1,0 +1,48 @@
+{
+    "debug": false,
+    "seed": 461,
+
+    "model_checkpoint": "studio-ousia/luke-large-lite",
+
+    "data_path": "../datasets/processed/mlm_essays_processed.csv",
+    "annotation_path": "../datasets/processed/mlm_anno_processed.csv",
+
+    "load_dataset_from_cache":false,
+
+    "load_from_ckpt": false,
+
+    "text_col": "essay_text",
+    "chunk_size": 512,
+    "test_pct": 0.02,
+
+    "max_train_examples": 75000,
+    "max_test_examples": 1000,
+
+    "mask_probability": 0.45,
+
+    "batch_size": 16,
+    "lr": 3e-5,
+    "weight_decay": 0.01,
+    "eps": 1e-6,
+    "warmup_pct": 0.01,
+    "beta1": 0.9,
+    "beta2": 0.999,
+    "num_epochs": 60,
+    "trained_model_name": "../models/backbones/LUKE_MLM_PROD",
+    "gradient_checkpointing": true,
+    "fp16": true,
+    "gradient_accumulation_steps": 1,
+    "use_bnb_optim": true,
+    "sampling_fraction": 1.0,
+    "eval_frequency": 1024,
+
+    "max_entity_length": 24,
+    "max_length": 512,
+    "stride": 0,
+    "max_mention_length": 400,
+
+    "project": "feedback-prize-ea",
+    "run_name": "rb-luke-span-mlm",
+    "output_dir": "../outputs/mlm/luke"
+
+}

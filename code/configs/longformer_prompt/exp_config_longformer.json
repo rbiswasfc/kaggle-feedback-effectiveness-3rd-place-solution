@@ -1,0 +1,76 @@
+{
+    "debug": false,
+    "add_new_tokens": false,
+
+    "base_model_path": "../output/mlm50-longformer-fixed",
+    "num_layers_reinit": 2,
+    "n_freeze": 0,
+    "model_dir": "../output/exp212a-lf-l-aug",
+    "run_name": "tk-exp212a-lf-l-aug",
+    "MSD": true,
+    "focal_gamma": 1,
+    "use_mask_aug": true,
+
+    "use_aug_data": true,
+    "num_samples": 2000,
+    "aug_train_path": "../datasets/processed/fpe-t5-augmented-data/t5_train.csv",
+    "aug_train_pl_path": "./t5_aug_pl_full.csv",
+    "aug_essay_path": "../datasets/processed/fpe-t5-augmented-data/t5_essays.csv",
+    "aug_use_pl": false,
+
+    "use_queries": false,
+
+    "train_bs": 16,
+    "grad_accumulation": 1,
+    "weight_decay": 1e-3,
+    "lr": 2e-5,
+    "llrd": 0.925,
+    "num_epochs": 6,
+    "eval_frequency": 20,
+    "full_eval_start_epoch": 2,
+
+    "use_awp": true,
+    "awp_trigger": 0.68,
+    "awp_trigger_epoch": 2,
+    "adv_lr": 8e-5,
+    "adv_eps": 0.001,
+
+    "use_multitask": false,
+    "num_additional_labels": 2,
+
+    "project": "feedback-prize-ea",
+    "exp_no": 2,
+    "tags": ["fast", "benchmark"],
+
+    "warmup_pct": 0.05,
+    "patience": 25,
+    "grad_clip": 5,
+    "use_bnb": false,
+    "use_fp16": false,
+
+    "max_length": 1024,
+    "stride": 256,
+    "num_labels": 3,
+    "dropout": 0.1,
+    "valid_bs": 16,
+    "eps": 1e-6,
+    "beta1": 0.9,
+    "beta2": 0.999,
+
+    "swa_lr": 5e-6,
+    "swa_anneal_epochs": 10,
+    "swa_trigger_epoch": 7,
+    "swa_step_frequency": 30,
+    "swa_trigger": 0.4,
+    "swa_save_trigger": 0.6,
+
+    "save_trigger": 0.65,
+
+    "fpe_dataset_dir": "../datasets/feedback-prize-effectiveness",
+    "fold_path": "../datasets/processed/cv_map_topics_8_folds.parquet",
+    "train_essay_fpe21_dir": "../datasets/processed/fpe_21_train_essays.parquet",
+    "train_essay_fpe22_dir": "../datasets/processed/fpe_22_train_essays.parquet",
+    "test_essay_fpe22_dir": "../datasets/processed/fpe_22_test_essays.parquet",
+    "code_dir": "/content/feedback/code",
+    "n_folds": 8
+}

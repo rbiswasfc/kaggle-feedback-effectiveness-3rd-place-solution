@@ -1,0 +1,63 @@
+{
+    "debug": false,
+
+    "base_model_path": "../models/backbones/TAPT_FPE_LONGFORMER",
+    "num_layers_reinit": 2,
+    "n_freeze": 0,
+    "model_dir": "../models/longformer_prod_multitask",
+
+    "train_bs": 8,
+    "grad_accumulation": 1,
+    "weight_decay": 1e-3,
+    "lr": 2e-5,
+    "llrd": 0.925,
+    "num_epochs": 5,
+    "eval_frequency": 20,
+    "full_eval_start_epoch": 3,
+
+    "use_awp": true,
+    "awp_trigger": 0.68,
+    "awp_trigger_epoch": 2,
+    "adv_lr": 8e-5,
+    "adv_eps": 0.001,
+
+    "use_multitask": true,
+    "num_additional_labels": 4,
+    "use_multitask_dl": true,
+
+    "project": "feedback-longformer",
+    "exp_no": 3,
+    "tags": ["fast", "multitask"],
+
+    "warmup_pct": 0.05,
+    "patience": 25,
+    "grad_clip": 10,
+    "use_bnb": true,
+    "use_fp16": true,
+
+    "max_length": 1024,
+    "stride": 256,
+    "num_labels": 3,
+    "dropout": 0.1,
+    "valid_bs": 16,
+    "eps": 1e-6,
+    "beta1": 0.9,
+    "beta2": 0.999,
+
+    "swa_lr": 5e-6,
+    "swa_anneal_epochs": 10,
+    "swa_trigger_epoch": 2,
+    "swa_step_frequency": 30,
+    "swa_trigger": 0.63,
+    "swa_save_trigger": 0.6,
+
+    "save_trigger": 0.65,
+
+    "fpe_dataset_dir": "../datasets/feedback-prize-effectiveness",
+    "fold_path": "../datasets/processed/cv_map_4_folds.parquet",
+    "train_essay_fpe21_dir": "../datasets/processed/fpe_21_train_essays.parquet",
+    "train_essay_fpe22_dir": "../datasets/processed/fpe_22_train_essays.parquet",
+    "test_essay_fpe22_dir": "../datasets/processed/fpe_22_test_essays.parquet",
+    "code_dir": "/content/feedback/code",
+    "n_folds": 4
+}

@@ -1,0 +1,8 @@
+transformers==4.19.2
+datasets==2.1.0
+accelerate==0.10.0
+bitsandbytes-cuda114
+wandb==0.12.15
+kaggle==1.5.12
+pynvml==11.4.1
+sentencepiece==0.1.95

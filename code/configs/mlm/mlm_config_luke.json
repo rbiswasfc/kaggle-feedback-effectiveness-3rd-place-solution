@@ -1,0 +1,39 @@
+{
+    "debug": false,
+    "seed": 461,
+    "add_augmented_data": false,
+    "model_checkpoint": "studio-ousia/luke-large-lite",
+    "data_path": "../datasets/processed/fpe_21_train_essays.parquet",
+    "annotation_path": "../datasets/feedback-prize-2021/train.csv",
+    "augmented_essay_path": "../datasets/processed/t5_essays_processed.csv",
+    "augmented_annotations_path": "../datasets/processed/t5_train_processed.csv",
+
+    "text_col": "essay_text",
+    "chunk_size": 512,
+    "test_pct": 0.025,
+    "max_train_examples": 75000,
+    "mask_probability": 0.5,
+
+    "batch_size": 16,
+    "lr": 3e-5,
+    "weight_decay": 0.01,
+    "eps": 1e-6,
+    "warmup_pct": 0.01,
+    "beta1": 0.9,
+    "beta2": 0.999,
+    "num_epochs": 60,
+    "trained_model_name": "../models/backbones/TAPT_LUKE",
+    "gradient_checkpointing": true,
+    "fp16": true,
+    "gradient_accumulation_steps": 1,
+    "use_bnb_optim": true,
+    "sampling_fraction": 1.0,
+    "eval_frequency": 2000,
+
+    "max_entity_length": 24,
+    "max_length": 512,
+    "stride": 0,
+
+    "project": "feedback-prize-ea",
+    "run_name": "rb-luke-span-mlm"
+}

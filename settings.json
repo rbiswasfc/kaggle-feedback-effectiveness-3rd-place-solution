@@ -1,0 +1,6 @@
+{
+  "RAW_DATA_DIR": "./datasets/",
+  "TRAIN_DATA_CLEAN_PATH": "./datasets/processed/train.csv",
+  "TEST_DATA_CLEAN_PATH": "./datasets/processed/test.csv",
+  "MODEL_CHECKPOINT_DIR": "./models/",
+}

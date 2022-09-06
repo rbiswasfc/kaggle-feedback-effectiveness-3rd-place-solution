@@ -1,0 +1,31 @@
+{
+    "debug": false,
+    "seed": 499,
+    "model_checkpoint": "microsoft/deberta-xlarge",
+    "data_path": "../datasets/processed/fpe_21_train_essays.parquet",
+    "annotation_path": "../datasets/feedback-prize-2021/train.csv",
+
+    "text_col": "essay_text",
+    "chunk_size": 720,
+    "test_pct": 0.02,
+    "max_train_examples": 75000,
+    "mask_probability": 0.45,
+    "batch_size": 16,
+    "lr": 2e-5,
+    "weight_decay": 0.01,
+    "eps": 1e-6,
+    "warmup_pct": 0.01,
+    "beta1": 0.9,
+    "beta2": 0.999,
+    "num_epochs": 64,
+    "trained_model_name": "../models/backbones/DEXL_MLM_PROD",
+    "gradient_checkpointing": true,
+    "fp16": true,
+    "gradient_accumulation_steps": 1,
+    "use_bnb_optim": true,
+    "sampling_fraction": 1.0,
+    "eval_frequency": 4000,
+
+    "project": "feedback-prize-ea",
+    "run_name": "rb-deberta-xlarge-span-mlm"
+}
